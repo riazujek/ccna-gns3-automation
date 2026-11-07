@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+
+# GNS3
+project-files/dynamips/
+project-files/iou/
+*.pcap
