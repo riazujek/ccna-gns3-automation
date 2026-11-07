@@ -27,9 +27,9 @@ This repository contains the baseline configurations and automation scripts for 
 *   `configs/` - Raw baseline startup configurations (NVRAM state) for all nodes.
 *   `scripts/` - Python automation scripts for data collection and provisioning. *(Upcoming)*
 
-## Current Project Status
-- [x] Establish base topology and GNS3 host networking.
-- [x] Configure 802.1Q Inter-VLAN routing.
-- [x] Optimize STP to Rapid PVST+ and verify redundant blocking (`Altn BLK`).
-- [x] Secure edge access ports with BPDU Guard.
-- [ ] Develop Netmiko script for automated backup and state verification.
+## Python Automation & Database Integration
+Using **Netmiko**, I engineered a Python pipeline to automatically SSH into the GNS3 management network, bypass legacy crypto blocks, and extract live hardware telemetry (`show version`, `show interfaces`). 
+
+The raw text data is parsed using **Regex** and injected directly into a local **MySQL** relational database to maintain an automated, field-engineer-style hardware inventory.
+
+![MySQL Hardware Inventory](misc/db_inventory.png)
